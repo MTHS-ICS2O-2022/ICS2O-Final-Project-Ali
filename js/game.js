@@ -7,7 +7,7 @@
 import startScene from "./startScene.js";
 import GameScene from "./gameScene.js";
 
-const startScene = new startScene();
+const startScene = new StartScene();
 const gameScene = new GameScene();
 
 const config = {
