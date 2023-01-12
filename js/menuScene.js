@@ -7,9 +7,9 @@
 
 class StartScene extends Phaser.Scene {
   constructor() {
-    super({ key: "startScene" });
+    super({ key: "menuScene" });
 
-    this.startSceneBackgroundImage = null;
+    this.menuSceneBackgroundImage = null;
     this.startButton = null;
   }
   /**
@@ -29,13 +29,13 @@ class StartScene extends Phaser.Scene {
   }
 
   create(data) {
-    this.startSceneBackgroundImage = this.add.sprite(
+    this.menuSceneBackgroundImage = this.add.sprite(
       0,
       0,
-      "startSceneBackgroundImage"
+      "menuSceneBackgroundImage"
     );
-    this.startSceneBackgroundImage.x = 1920 / 2;
-    this.startSceneBackgroundImage.y = 1080 / 2;
+    this.menuSceneBackgroundImage.x = 1920 / 2;
+    this.menuSceneBackgroundImage.y = 1080 / 2;
 
     this.startButton = this.add.sprite(1920 / 2, 1080 / 2 + 100, "startButton");
     this.startButton.setInteractive({ useHandCursor: true });
@@ -49,4 +49,4 @@ class StartScene extends Phaser.Scene {
   }
 }
 
-export default startScene;
+export default menuScene;
