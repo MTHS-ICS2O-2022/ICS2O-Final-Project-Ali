@@ -2,11 +2,17 @@
 // Copyright (c) 2020 Ali Mugamai All rights reserved
 //
 // Created by: Ali Mugamai
-// Created on: JAN 2023
+// Created on: NOV 2022
 // This file contains the JS functions for index.html
-import startScene from "./startScene.js";
+import SplashScene from "./splashScene.js";
+import TitleScene from "./titleScene.js";
+import MenuScene from "./menuScene.js";
+import GameScene from "./gameScene.js";
 
-const startScene = new StartScene();
+const splashScene = new SplashScene();
+const titleScene = new TitleScene();
+const menuScene = new MenuScene();
+const gameScene = new GameScene();
 
 const config = {
   type: Phaser.AUTO,
@@ -15,7 +21,7 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      debug: true,
+      debug: false,
     },
   },
   // set background colour //
@@ -28,6 +34,9 @@ const config = {
 
 const game = new Phaser.Game(config);
 
-game.scene.add("startScene", startScene);
+game.scene.add("splashScene", splashScene);
+game.scene.add("titleScene", titleScene);
+game.scene.add("menuScene", menuScene);
+game.scene.add("gameScene", gameScene);
 
-game.scene.start("startScene");
+game.scene.start("splashScene");
