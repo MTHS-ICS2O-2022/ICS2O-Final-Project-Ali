@@ -2,13 +2,16 @@
 // Copyright (c) 2020 Ali Mugamai All rights reserved
 //
 // Created by: Ali Mugamai
-// Created on: JAN 2023
+// Created on: NOV 2022
 // This file contains the JS functions for index.html
+
 import startScene from "./startScene.js";
 import GameScene from "./gameScene.js";
+import MenuScene from "./menuScene.js";
 
 const startScene = new startScene();
 const gameScene = new GameScene();
+const menuScene = new MenuScene();
 
 const config = {
   type: Phaser.AUTO,
