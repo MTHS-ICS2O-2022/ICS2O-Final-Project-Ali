@@ -156,21 +156,14 @@ class GameScene extends Phaser.Scene {
         this.firemissile = false;
         }
 
-        this.missileGroup.children.each(function (item) {
+    this.missileGroup.children.each(function (item) {
         item.y = item.y - 15;
         if (item.y < 0) {
-            item.destroy();
-        }
+        item.destroy();
+            }
         });
     }
-
-    this.missileGroup.children.each(function (item) {
-      item.y = item.y - 15;
-      if (item.y < 0) {
-        item.destroy();
-      }
-    });
-  }
+}
 }
 
 export default GameScene;
