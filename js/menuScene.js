@@ -49,4 +49,4 @@ class StartScene extends Phaser.Scene {
   }
 }
 
-export default menuScene;
+export default MenuScene;
