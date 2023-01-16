@@ -2,10 +2,10 @@
 // Copyright (c) 2020 Ali Mugamai All rights reserved
 //
 // Created by: Ali Mugamai
-// Created on: JAN 2023
+// Created on: NOV 2022
 // This file contains the JS functions for index.html
 
-class StartScene extends Phaser.Scene {
+class MenuScene extends Phaser.Scene {
   constructor() {
     super({ key: "menuScene" });
 
@@ -20,11 +20,8 @@ class StartScene extends Phaser.Scene {
   }
 
   preload() {
-    console.log("Start Scene");
-    this.load.image(
-      "menuSceneBackground",
-      "./assets/river_fighting_startscene.jpg"
-    );
+    console.log("Menu Scene");
+    this.load.image("menuSceneBackground", "./assets/river_fighting_startscene.jpg");
     this.load.image("startButton", "./assets/start_button.png");
   }
 
@@ -32,7 +29,7 @@ class StartScene extends Phaser.Scene {
     this.menuSceneBackgroundImage = this.add.sprite(
       0,
       0,
-      "menuSceneBackgroundImage"
+      "menuSceneBackground"
     );
     this.menuSceneBackgroundImage.x = 1920 / 2;
     this.menuSceneBackgroundImage.y = 1080 / 2;
