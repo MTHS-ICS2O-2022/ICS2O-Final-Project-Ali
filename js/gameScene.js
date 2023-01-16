@@ -11,11 +11,7 @@ class GameScene extends Phaser.Scene {
 
     this.background = null;
     this.p1 = null;
-<<<<<<< HEAD
     this.p2 = null
-=======
-    this.p2;
->>>>>>> 75a48b92b9316b60ceab11114b459ca5339fee41
     this.fireMissle = false;
     this.score = 0;
     this.scoreText = null;
