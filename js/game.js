@@ -6,8 +6,10 @@
 // This file contains the JS functions for index.html
 
 import MenuScene from "./menuScene.js";
+import GameScene from "./gameScene.js";
 
 const menuScene = new MenuScene();
+const gameScene = new GameScene();
 
 const config = {
   type: Phaser.AUTO,
@@ -30,5 +32,6 @@ const config = {
 const game = new Phaser.Game(config);
 
 game.scene.add("menuScene", menuScene);
+game.scene.add("gameScene", gameScene);
 
 game.scene.start("menuScene");
