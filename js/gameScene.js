@@ -56,7 +56,7 @@ class GameScene extends Phaser.Scene {
     );
 
     this.player1 = this.physics.add.sprite(1920 / 2, 1080 - 100, "blue");
-    this.player2 = this.physics.add.sprite(1920 / 2, 1080 + 100, "red");
+    this.player2 = this.physics.add.sprite(1920 / 2, 1080 - 500, "red");
 
     this.missileGroup = this.physics.add.group();
 
