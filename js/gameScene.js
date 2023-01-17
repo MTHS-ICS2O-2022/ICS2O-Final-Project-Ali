@@ -153,7 +153,7 @@ class GameScene extends Phaser.Scene {
       }
     });
 
-//player 2 controls
+    //player 2 controls
 
     if (keyAObj.isDown === true) {
       this.player2.x -= 15;
