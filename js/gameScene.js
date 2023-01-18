@@ -12,7 +12,8 @@ class GameScene extends Phaser.Scene {
     this.background = null;
     this.player1 = null;
     this.player2 = null;
-    this.fireMissle = false;
+    this.fireblue_laser = false;
+    this.firered_laser = false;
     this.score = 0;
     this.scoreText = null;
     this.scoreTextStyle = {
@@ -37,7 +38,8 @@ class GameScene extends Phaser.Scene {
     this.load.image("starBackground", "./assets/river_fighting_scene.jpg");
     this.load.image("blue", "./assets/player_1.png");
     this.load.image("red", "./assets/player_2.png");
-    this.load.image("missile", "./assets/blue_laser.png");
+    this.load.image("blue_laser", "./assets/blue_laser.png");
+    this.load.image("red_laser", "./assets/red_laser.png");
     // sound
     this.load.audio("laser", "./assets/blaster.mp3");
     this.load.audio("bomb", "./assets/explosion.mp3");
@@ -57,15 +59,16 @@ class GameScene extends Phaser.Scene {
     this.player1 = this.physics.add.sprite(1920 / 2, 1080 - 100, "blue");
     this.player2 = this.physics.add.sprite(1920 / 2, 1080 - 1000, "red");
 
-    this.missileGroup = this.physics.add.group();
+    this.blue_laserGroup = this.physics.add.group();
+    this.red_laserGroup = this.physics.add.group();
 
     this.physics.add.collider(
-      this.missileGroup,
+      this.blue_laserGroup,
       this.player1,
-      function (player1Collide, missileCollide) {
+      function (player1Collide, blue_laserCollide) {
         this.sound.play("bomb");
         this.physics.pause();
-        missileCollide.destroy();
+        blue_laserCollide.destroy();
         player1Collide.destroy();
         this.gameOverText = this.add
           .text(
@@ -83,12 +86,12 @@ class GameScene extends Phaser.Scene {
     );
 
     this.physics.add.collider(
-      this.missileGroup,
+      this.red_laserGroup,
       this.player2,
-      function (player2Collide, missileCollide) {
+      function (player2Collide, red_laserCollide) {
         this.sound.play("bomb");
         this.physics.pause();
-        missileCollide.destroy();
+        red_laserCollide.destroy();
         player2Collide.destroy();
         this.gameOverText = this.add
           .text(
@@ -129,23 +132,23 @@ class GameScene extends Phaser.Scene {
     }
 
     if (keyDownObj.isDown === true) {
-      if (this.firemissile === false) {
-        this.firemissile = true;
-        const aNewMissile = this.physics.add.sprite(
+      if (this.fireblue_laser === false) {
+        this.fireblue_laser = true;
+        const aNewblue_laser = this.physics.add.sprite(
           this.player1.x,
           this.player1.y,
-          "missile"
+          "blue_laser"
         );
-        this.missileGroup.add(aNewMissile);
+        this.blue_laserGroup.add(aNewblue_laser);
         this.sound.play("laser");
       }
     }
 
     if (keyDownObj.isUp === true) {
-      this.firemissile = false;
+      this.fireblue_laser = false;
     }
 
-    this.missileGroup.children.each(function (item) {
+    this.blue_laserGroup.children.each(function (item) {
       item.y = item.y - 15;
       if (item.y < 0) {
         item.destroy();
@@ -168,24 +171,24 @@ class GameScene extends Phaser.Scene {
     }
 
     if (keyDownObj.isDown === true) {
-      if (this.firemissile === false) {
-        this.firemissile = true;
-        const aNewMissile = this.physics.add.sprite(
+      if (this.firered_laser === false) {
+        this.firered_laser = true;
+        const aNewred_laser = this.physics.add.sprite(
           this.player2.x,
           this.player2.y,
-          "missile"
+          "red_laser"
         );
-        this.missileGroup.add(aNewMissile);
+        this.red_laserGroup.add(aNewred_laser);
         this.sound.play("laser");
       }
     }
 
     if (keySObj.isUp === true) {
-      this.firemissile = false;
+      this.firered_laser = false;
     }
 
-    this.missileGroup.children.each(function (item) {
-      item.y = item.y - 15;
+    this.red_laserGroup.children.each(function (item) {
+      item.y = item.y + 15;
       if (item.y < 0) {
         item.destroy();
       }
