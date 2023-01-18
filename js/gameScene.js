@@ -65,10 +65,10 @@ class GameScene extends Phaser.Scene {
     this.physics.add.collider(
       this.blue_laserGroup,
       this.player1,
-      function (player1Collide, blue_laserCollide) {
+      function (player1Collide, red_laserCollide) {
         this.sound.play("bomb");
         this.physics.pause();
-        blue_laserCollide.destroy();
+        red_laserCollide.destroy();
         player1Collide.destroy();
         this.gameOverText = this.add
           .text(
@@ -88,10 +88,10 @@ class GameScene extends Phaser.Scene {
     this.physics.add.collider(
       this.red_laserGroup,
       this.player2,
-      function (player2Collide, red_laserCollide) {
+      function (player2Collide, blue_laserCollide) {
         this.sound.play("bomb");
         this.physics.pause();
-        red_laserCollide.destroy();
+        blue_laserCollide.destroy();
         player2Collide.destroy();
         this.gameOverText = this.add
           .text(
@@ -170,7 +170,7 @@ class GameScene extends Phaser.Scene {
       }
     }
 
-    if (keyDownObj.isDown === true) {
+    if (keySObj.isDown === true) {
       if (this.firered_laser === false) {
         this.firered_laser = true;
         const aNewred_laser = this.physics.add.sprite(
