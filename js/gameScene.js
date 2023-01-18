@@ -61,7 +61,8 @@ class GameScene extends Phaser.Scene {
 
     this.blue_laserGroup = this.physics.add.group();
     this.red_laserGroup = this.physics.add.group();
-    blue_laserGroup.scale.x = (256, 256);
+    
+    player1.scale.x = (256, 256)
     this.physics.add.collider(
       this.red_laserGroup,
       this.player1,
