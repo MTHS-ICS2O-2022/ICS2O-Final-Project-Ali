@@ -57,7 +57,9 @@ class GameScene extends Phaser.Scene {
     );
 
     this.player1 = this.physics.add.sprite(1920 / 2, 1080 - 100, "blue");
-    this.player2 = this.physics.add.sprite(1920 / 2, 1080 - 1000, "red").setscale(0.2);
+    this.player2 = this.physics.add
+      .sprite(1920 / 2, 1080 - 1000, "red")
+      .setscale(0.2);
 
     this.blue_laserGroup = this.physics.add.group();
     this.red_laserGroup = this.physics.add.group();
