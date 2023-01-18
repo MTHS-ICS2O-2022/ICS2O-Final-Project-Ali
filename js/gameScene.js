@@ -63,7 +63,7 @@ class GameScene extends Phaser.Scene {
     this.red_laserGroup = this.physics.add.group();
 
     this.physics.add.collider(
-      this.blue_laserGroup,
+      this.red_laserGroup,
       this.player1,
       function (player1Collide, red_laserCollide) {
         this.sound.play("bomb");
@@ -86,7 +86,7 @@ class GameScene extends Phaser.Scene {
     );
 
     this.physics.add.collider(
-      this.red_laserGroup,
+      this.blue_laserGroup,
       this.player2,
       function (player2Collide, blue_laserCollide) {
         this.sound.play("bomb");
