@@ -14,13 +14,20 @@ class GameScene extends Phaser.Scene {
     this.player2 = null;
     this.fireblue_laser = false;
     this.firered_laser = false;
-    this.score = 0;
-    this.scoreText = null;
-    this.scoreTextStyle = {
+    this.score_p1 = 0;
+    this.score_p2 = 0;
+    this.score1Text = null;
+    this.score2Text = null;
+    this.score1TextStyle = {
       font: "65px Arial",
       fill: "#ffffff",
       align: "center",
     };
+    this.score2TextStyle = {
+      font: "65px Arial",
+      fill: "#ffffff",
+      align: "center",
+    }
     this.gameOverTextStyle = {
       font: "65px Arial",
       fill: "#ff0000",
@@ -49,12 +56,18 @@ class GameScene extends Phaser.Scene {
     this.background = this.add.image(0, 0, "starBackground");
     this.background.setOrigin(0, 0);
 
-    this.scoreText = this.add.text(
+    this.score1Text = this.add.text(
       10,
       10,
-      "Score: " + this.score.toString(),
-      this.scoreTextStyle
+      "Score: " + this.score_p1.toString(),
+      this.score1TextStyle
     );
+    this.score1Text = this.add.text(
+      10,
+      10,
+      "Score: " + this.score_p2.toString(),
+      this.score2TextStyle
+    )
 
     this.player1 = this.physics.add.sprite(1920 / 2, 1080 - 100, "blue");
     this.player2 = this.physics.add.sprite(1920 / 2, 1080 - 1000, "red");
@@ -70,6 +83,7 @@ class GameScene extends Phaser.Scene {
         this.physics.pause();
         red_laserCollide.destroy();
         player1Collide.destroy();
+        this.score_p2 = score_p2 + 1
         this.gameOverText = this.add
           .text(
             1920 / 2,
@@ -80,7 +94,7 @@ class GameScene extends Phaser.Scene {
           .setOrigin(0.5);
         this.gameOverText.setInteractive({ useHandCursor: true });
         this.gameOverText.on("pointerdown", () =>
-          this.scene.start("menuScene")
+          this.scene.start("gameScene")
         );
       }.bind(this)
     );
@@ -93,6 +107,7 @@ class GameScene extends Phaser.Scene {
         this.physics.pause();
         blue_laserCollide.destroy();
         player2Collide.destroy();
+        this.score_p1 = score_p1 + 1
         this.gameOverText = this.add
           .text(
             1920 / 2,
