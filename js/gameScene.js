@@ -27,7 +27,7 @@ class GameScene extends Phaser.Scene {
       font: "65px Arial",
       fill: "#ffffff",
       align: "center",
-    }
+    };
     this.gameOverTextStyle = {
       font: "65px Arial",
       fill: "#ff0000",
@@ -67,7 +67,7 @@ class GameScene extends Phaser.Scene {
       10,
       "Score: " + this.score_p2.toString(),
       this.score2TextStyle
-    )
+    );
 
     this.player1 = this.physics.add.sprite(1920 / 2, 1080 - 100, "blue");
     this.player2 = this.physics.add.sprite(1920 / 2, 1080 - 1000, "red");
@@ -83,7 +83,7 @@ class GameScene extends Phaser.Scene {
         this.physics.pause();
         red_laserCollide.destroy();
         player1Collide.destroy();
-        this.score_p2 = score_p2 + 1
+        this.score_p2 = score_p2 + 1;
         this.gameOverText = this.add
           .text(
             1920 / 2,
@@ -107,7 +107,7 @@ class GameScene extends Phaser.Scene {
         this.physics.pause();
         blue_laserCollide.destroy();
         player2Collide.destroy();
-        this.score_p1 = score_p1 + 1
+        this.score_p1 = score_p1 + 1;
         this.gameOverText = this.add
           .text(
             1920 / 2,
