@@ -83,7 +83,7 @@ class GameScene extends Phaser.Scene {
         this.physics.pause();
         red_laserCollide.destroy();
         player1Collide.destroy();
-        this.score_p2 = score_p2 + 1;
+        score_p2 = score_p2 + 1;
         this.gameOverText = this.add
           .text(
             1920 / 2,
