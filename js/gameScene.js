@@ -58,7 +58,7 @@ class GameScene extends Phaser.Scene {
 
     this.score1Text = this.add.text(
       10,
-      10,
+      5,
       "p1 Score: " + this.score_p1.toString(),
       this.score1TextStyle
     );
