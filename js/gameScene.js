@@ -42,7 +42,7 @@ class GameScene extends Phaser.Scene {
   preload() {
     console.log("Game Scene");
 
-    this.load.image("starBackground", "./assets/river_fighting_scene.jpg");
+    this.load.image("riverScene", "./assets/river_fighting_scene.jpg");
     this.load.image("blue", "./assets/player_1.png");
     this.load.image("red", "./assets/player_2.png");
     this.load.image("blue_laser", "./assets/blue_laser.png");
@@ -53,19 +53,19 @@ class GameScene extends Phaser.Scene {
   }
 
   create(data) {
-    this.background = this.add.image(0, 0, "starBackground");
+    this.background = this.add.image(0, 0, "riverScene");
     this.background.setOrigin(0, 0);
 
     this.score1Text = this.add.text(
       10,
       10,
-      "p1 Score: " + this.score_p1.toString(),
+      "P1 Score: " + this.score_p1.toString(),
       this.score1TextStyle
     );
     this.score2Text = this.add.text(
-      1920,
-      1080,
-      "p2 Score: " + this.score_p2.toString(),
+      10,
+      100,
+      "P2 Score: " + this.score_p2.toString(),
       this.score2TextStyle
     );
 
@@ -84,7 +84,7 @@ class GameScene extends Phaser.Scene {
         red_laserCollide.destroy();
         player1Collide.destroy();
         this.score_p1 = this.score_p1 + 1;
-        this.score1Text.setText("score: " + this.score_p1.toString());
+        this.score1Text.setText("P1 score: " + this.score_p1.toString());
         this.gameOverText = this.add
           .text(
             1920 / 2,
@@ -109,7 +109,7 @@ class GameScene extends Phaser.Scene {
         blue_laserCollide.destroy();
         player2Collide.destroy();
         this.score_p2 = this.score_p2 + 1;
-        this.score2Text.setText("score: " + this.score_p2.toString());
+        this.score2Text.setText("P2 score: " + this.score_p2.toString());
         this.gameOverText = this.add
           .text(
             1920 / 2,
