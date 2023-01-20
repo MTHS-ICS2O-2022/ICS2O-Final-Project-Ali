@@ -62,14 +62,14 @@ class GameScene extends Phaser.Scene {
       "Score: " + this.score_p1.toString(),
       this.score1TextStyle
     );
-    this.score1Text.setOrigin(0, 1000)
+    this.score1Text.setOrigin(0, 1000);
     this.score2Text = this.add.text(
       10,
       10,
       "Score: " + this.score_p2.toString(),
       this.score2TextStyle
     );
-    this.score2Text.setOrigin(0, 800)
+    this.score2Text.setOrigin(0, 800);
 
     this.player1 = this.physics.add.sprite(1920 / 2, 1080 - 100, "blue");
     this.player2 = this.physics.add.sprite(1920 / 2, 1080 - 1000, "red");
