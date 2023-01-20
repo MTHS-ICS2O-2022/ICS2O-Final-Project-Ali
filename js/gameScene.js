@@ -63,8 +63,8 @@ class GameScene extends Phaser.Scene {
       this.score1TextStyle
     );
     this.score2Text = this.add.text(
-      10,
-      10,
+      1920,
+      1080,
       "p2 Score: " + this.score_p2.toString(),
       this.score2TextStyle
     );
@@ -120,7 +120,7 @@ class GameScene extends Phaser.Scene {
           .setOrigin(0.5);
         this.gameOverText.setInteractive({ useHandCursor: true });
         this.gameOverText.on("pointerdown", () =>
-          this.scene.start("menuScene")
+          this.scene.start("gameScene")
         );
       }.bind(this)
     );
