@@ -84,7 +84,7 @@ class GameScene extends Phaser.Scene {
         red_laserCollide.destroy();
         player1Collide.destroy();
         this.score_p1 = this.score_p1 + 1;
-        this.score1Text.setText("P1 score: " + this.score_p1.toString());
+        this.score1Text.setText("P1 Score: " + this.score_p1.toString());
         this.gameOverText = this.add
           .text(
             1920 / 2,
@@ -109,7 +109,7 @@ class GameScene extends Phaser.Scene {
         blue_laserCollide.destroy();
         player2Collide.destroy();
         this.score_p2 = this.score_p2 + 1;
-        this.score2Text.setText("P2 score: " + this.score_p2.toString());
+        this.score2Text.setText("P2 Score: " + this.score_p2.toString());
         this.gameOverText = this.add
           .text(
             1920 / 2,
