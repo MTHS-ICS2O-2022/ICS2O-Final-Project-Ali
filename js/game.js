@@ -1,8 +1,8 @@
 /* global phaser */
-// Copyright (c) 2020 Ali Mugamai All rights reserved
+// Copyright (c) 2023 Ali Mugamai All rights reserved
 //
 // Created by: Ali Mugamai
-// Created on: NOV 2022
+// Created on: JAN 2023
 // This file contains the JS functions for index.html
 
 import startScene from "./startScene.js";
